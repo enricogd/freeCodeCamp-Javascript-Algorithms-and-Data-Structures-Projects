@@ -1,0 +1,11 @@
+function palindrome(str) {
+  const comp1 = str.replace(/[\W_]/g, '').toLowerCase() //comparador 1: tudo minusculo e sem caracteres especiais
+  const comp2 = comp1.split('').reverse().join('') //comparador 2: o inverso do comp1
+  for(let i = 0; i < comp1.length; i++){
+    if(!(comp1[i] === comp2[i])) return false
+  }
+  return true
+}
+
+
+console.log(palindrome("five|\_/|four"));

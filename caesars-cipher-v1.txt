@@ -1,0 +1,23 @@
+function rot13(str) { // LBH QVQ VG!
+  let dArr = []
+  let eArr = str.split('')
+  eArr = eArr.map(elem => str.charCodeAt(eArr.indexOf(elem)))
+    //console.log(eArr)
+  eArr = eArr.map(function(elem) {
+    if(elem >= 65 && elem <= 90){
+      elem = elem - 13
+      
+      if(elem < 65){
+        elem = 91 - (65 - elem)
+      }
+    }
+    return elem
+  })
+  console.log(eArr)
+  eArr = eArr.map(elem => String.fromCharCode(elem)).join('')
+  console.log(eArr)
+  return eArr
+}
+
+// Change the inputs below to test
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");

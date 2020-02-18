@@ -1,0 +1,16 @@
+function convertToRoman(num) {
+    const romanNumerals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+    const decimalNumerals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    let result = ''
+    let index
+    while(num >= 1){
+        index = decimalNumerals.findIndex(elem => num >= elem)
+        result = result.concat(
+            romanNumerals[index]
+        )
+        num -= decimalNumerals[index]
+        console.log(result)
+    }
+    return result
+}
+convertToRoman(36);
